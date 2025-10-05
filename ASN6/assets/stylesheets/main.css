@@ -373,3 +373,27 @@ p a {
 .venue-map {
   height: 264px;
 }
+
+/* Travel images side by side */
+.image-row {
+  display: flex !important;
+  flex-direction: row !important;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  border: 2px dashed #648880;
+  background: #f6f1d3;
+  padding: 20px;
+  width: auto;
+  max-width: none;
+  margin-left: 0;
+  overflow-x: auto;
+}
+.image-row img {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 0;
+  box-shadow: none;
+  background: #eee;
+}
