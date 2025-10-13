@@ -5,45 +5,81 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Register</title>
-            <link href="styles.css" rel="stylesheet" type ="text/css">     
-    
+            <link href="styles.css" rel="stylesheet" type="text/css">
     </head>
+
     <body>
         <header>
             <h1>Register</h1>
         </header>
-		<nav>
-		  <ul>
-		   <li><a href="index.html">Home</a></li>
-		    <li><a href="about.html">About</a></li>
-		    <li><a href="projects.html">Projects</a></li>
-            <li><a href="register.html">Register</a></li>
+        <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="register.html" class="active">Register</a></li>
+        </ul>
+    </nav>
 
-		  </ul>
-		</nav>
-		
-		
-        <main>
-            <input type="checkbox">
-            <input type="color">
-            <input type="email">
-            <input type="file">
-            <input type="password">
-            <input type="radio">
-            <input type="range">
-            <input type="reset">
-            <input type="text">
-            <label for="name">First Name:</label>
-            <textarea>
-
-            <select>
+    <main>
+        <form action="https://formspree.io/f/myzkjveq" method="POST" enctype="multipart/form-data">
             <fieldset>
-            <legend>
-            <option>
-        </main>
-        <footer>
-		<p>&copy; 2025 Jeshlymar</p>
-        </footer>
-       
-    </body>
+                <legend>Personal Information</legend>
+
+                <label for="fname">First Name:</label>
+                <input type="text" id="fname" name="fname" required>
+
+                <label for="lname">Last Name:</label>
+                <input type="text" id="lname" name="lname" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+
+                <label>Gender:</label>
+                <div class="radio-group">
+                    <label><input type="radio" name="gender" value="Male"> Male</label>
+                    <label><input type="radio" name="gender" value="Female"> Female</label>
+                </div>
+
+                <label for="color">Favorite Color:</label>
+                <input type="color" id="color" name="color">
+
+                <label for="range">Satisfaction (1–10):</label>
+                <input type="range" id="range" name="satisfaction" min="1" max="10">
+
+                <label for="file">Upload a File:</label>
+                <input type="file" id="file" name="file">
+
+                <label for="country">Country:</label>
+                <select id="country" name="country">
+                    <option value="">--Select--</option>
+                    <option value="usa">USA</option>
+                    <option value="canada">Canada</option>
+                    <option value="uk">UK</option>
+                    <option value="other">Other</option>
+                </select>
+
+                <label for="comments">Comments:</label>
+                <textarea id="comments" name="comments" rows="4" placeholder="Write your message here..."></textarea>
+
+                <label>
+                    <input type="checkbox" name="terms" required>
+                    I agree to the terms and conditions
+                </label>
+
+                <div class="form-buttons">
+                    <input type="submit" value="Submit">
+                    <input type="reset" value="Reset">
+                </div>
+            </fieldset>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Jeshlymar</p>
+    </footer>
+</body>
 </html>
