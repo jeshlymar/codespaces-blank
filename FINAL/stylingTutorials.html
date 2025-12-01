@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Azrilahl - Styling Tutorials</title>
+    <link href="styles.css" rel="stylesheet" type ="text/css">     
+</head>
+
+<body>
+
+ <header>
+        <div class="logo-title">
+            <h1 class="title">Azrilahl</h1>
+            <img src="images/logo.jpg" alt="Azrilahl logo" width="100" height="100" class="logo" />
+        </div>
+        <nav>
+            <a href="home.html">Home</a>
+            <a href="hairCareTest.html">Hair Care Test</a>
+            <a href="tipsProducts.html">Tips & Products</a>
+            <a href="stylingTutorials.html">Styling Tutorials</a>
+            <a href="services.html">Services</a>
+            <a href="aboutContact.html">About & Contact</a>
+        </nav>
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </header>
+
+    <div id="mobileMenu">
+        <a href="home.html">Home</a>
+        <a href="hairCareTest.html">Hair Care Test</a>
+        <a href="tipsProducts.html">Tips & Products</a>
+        <a href="stylingTutorials.html">Styling Tutorials</a>
+        <a href="services.html">Services</a>
+        <a href="aboutContact.html">About & Contact</a>
+    </div>
+
+
+<section class="tutorial">
+    <div class="tutorial-video">
+        <video controls>
+            <source src="https://youtube.com/watch?v=uRiZnHgTm5I&si=GuD__OUKRedJDPn8" type="video/mp4" />
+        </video>
+
+        <img src="images/final1.jpg" class="final-image" alt="Final Result">
+    </div>
+
+    <div class="tutorial-text">
+
+        <h2>Defined Natural Curls Tutorial</h2>
+
+        <div class="dropdown">
+            <button class="dropdown-btn" onclick="toggleDropdown(this)">Transcript</button>
+            <div class="dropdown-content">
+                <p>
+                    Step 1: Start with damp hair.<br>
+                    Step 2: Apply leave-in conditioner.<br>
+                    Step 3: Detangle using a wide tooth comb.<br>
+                    Step 4: Apply styling gel using the raking method.<br>
+                    Step 5: Scrunch curls upward to enhance definition.<br>
+                    Step 6: Diffuse or air dry.
+                </p>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <button class="dropdown-btn" onclick="toggleDropdown(this)">Tips</button>
+            <div class="dropdown-content">
+                <p>
+                    • Use a microfiber towel to prevent frizz.<br>
+                    • Avoid touching curls while drying.<br>
+                    • Use products with strong hold for long-lasting definition.
+                </p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+<section class="tutorial">
+    <div class="tutorial-video">
+        <video controls>
+            <source src="videos/tutorial2.mp4" type="video/mp4" />
+        </video>
+
+        <img src="images/final2.jpg" class="final-image" alt="Final Result">
+    </div>
+
+    <div class="tutorial-text">
+
+        <h2>Protective Style: Twists</h2>
+
+        <div class="dropdown">
+            <button class="dropdown-btn" onclick="toggleDropdown(this)">Transcript</button>
+            <div class="dropdown-content">
+                <p>
+                    Step 1: Part hair into sections.<br>
+                    Step 2: Apply twisting cream.<br>
+                    Step 3: Twist tightly from root to end.<br>
+                    Step 4: Seal ends with oil.<br>
+                    Step 5: Let air dry or set under hooded dryer.
+                </p>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <button class="dropdown-btn" onclick="toggleDropdown(this)">Tips</button>
+            <div class="dropdown-content">
+                <p>
+                    • Smaller twists = longer lasting style.<br>
+                    • Keep scalp moisturized with light oils.<br>
+                    • Do not overuse heavy products to avoid buildup.
+                </p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<footer>
+    <p>Contact us: azrilahl@gmail.com | (765) 485-9265</p>
+</footer>
+
+<script>
+    function toggleMenu() {
+        const menu = document.getElementById("mobileMenu");
+        menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+    }
+
+    function toggleDropdown(button) {
+        const content = button.nextElementSibling;
+        content.style.display = content.style.display === "block" ? "none" : "block";
+    }
+</script>
+
+</body>
+</html>
