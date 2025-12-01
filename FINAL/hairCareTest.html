@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hair Care Test – Azrilahl</title>
+<link href="styles.css" rel="stylesheet" type ="text/css">     
+
+</head>
+<body>
+
+<header>
+    <div class="logo-title">
+        <h1 class="title">Azrilahl</h1>
+        <img src="images/logo.jpg" alt="Azrilahl logo" class="logo">
+    </div>
+    <nav>
+        <a href="home.html">Home</a>
+        <a href="hairCareTest.html">Hair Care Test</a>
+        <a href="tipsProducts.html">Tips & Products</a>
+        <a href="stylingTutorials.html">Styling Tutorials</a>
+        <a href="services.html">Services</a>
+        <a href="aboutContact.html">About & Contact</a>
+    </nav>
+    <div class="hamburger" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</header>
+<div id="mobileMenu">
+        <a href="home.html">Home</a>
+        <a href="hairCareTest.html">Hair Care Test</a>
+        <a href="tipsProducts.html">Tips & Products</a>
+        <a href="stylingTutorials.html">Styling Tutorials</a>
+        <a href="services.html">Services</a>
+        <a href="aboutContact.html">About & Contact</a>
+    </div>
+
+<div class="container">
+    <h2>Hair Care Assessment</h2>
+    <form id="hairTest">
+        <div class="question-block">
+            <h3>1. What is your natural hair texture?</h3>
+            <label><input type="radio" name="texture" value="straight">Straight</label><br>
+            <label><input type="radio" name="texture" value="wavy">Wavy</label><br>
+            <label><input type="radio" name="texture" value="curly">Curly</label><br>
+            <label><input type="radio" name="texture" value="coily">Coily</label>
+        </div>
+
+        <div class="question-block">
+            <h3>2. What is your biggest hair concern?</h3>
+            <label><input type="radio" name="concern" value="dryness">Dryness</label><br>
+            <label><input type="radio" name="concern" value="frizz">Frizz</label><br>
+            <label><input type="radio" name="concern" value="breakage">Breakage</label><br>
+            <label><input type="radio" name="concern" value="oil">Excess Oil</label>
+        </div>
+
+        <div class="question-block">
+            <h3>3. How often do you use heat styling?</h3>
+            <label><input type="radio" name="heat" value="never">Never</label><br>
+            <label><input type="radio" name="heat" value="sometimes">1–2 times per week</label><br>
+            <label><input type="radio" name="heat" value="often">3–5 times per week</label><br>
+            <label><input type="radio" name="heat" value="daily">Daily</label>
+        </div>
+
+        <div class="question-block">
+            <h3>4. What are your hair goals?</h3>
+            <label><input type="radio" name="goals" value="thinning">Stop Thinning</label><br>
+            <label><input type="radio" name="goals" value="fuller">Fuller Hair</label><br>
+            <label><input type="radio" name="goals" value="breakage">Less Breakage</label><br>
+            <label><input type="radio" name="goals" value="volume">More Volume</label>
+        </div>
+
+        <button type="button" class="submit-btn" onclick="calculateResults()">Submit</button>
+    </form>
+
+    <div id="results"></div>
+</div>
+
+<footer>
+    <p>Contact us: azrilahl@gmail.com | (765) 485-9265</p>
+</footer>
+
+<script>
+function toggleMenu() {
+    document.querySelector("nav").classList.toggle("open");
+}
+
+function calculateResults() {
+    const texture = document.querySelector('input[name="texture"]:checked');
+    const concern = document.querySelector('input[name="concern"]:checked');
+    const heat = document.querySelector('input[name="heat"]:checked');
+    const goals = document.querySelector('input[name="goals"]:checked');
+
+    if (!texture || !concern || !heat || !goals) {
+        alert("Please answer all questions.");
+        return;
+    }
+
+    let html = `<h2>Your Hair Care Recommendations</h2>`;
+
+    // Texture tips
+    const tips = {
+        straight: ["Use lightweight products and avoid heavy oils.", "Regular trims to maintain health.", "Clarifying shampoos to prevent buildup.", "Heat protection when styling.", "Avoid over-washing to retain natural oils.", "Use a wide-tooth comb to prevent breakage.", "Incorporate a weekly deep conditioning treatment."],
+        wavy: ["Enhance waves with curl creams and avoid brushing dry.", "Use a diffuser when blow-drying to maintain wave pattern.", "Incorporate sea salt sprays for texture.", "Avoid heavy conditioners that can weigh waves down.", "Use a microfiber towel to reduce frizz.", "Regular trims to prevent split ends.", "Deep condition weekly to maintain moisture."],
+        curly: ["Deep condition weekly and define curls with leave-in products.", "Avoid brushing dry curls to prevent frizz.", "Use a wide-tooth comb or fingers to detangle.", "Incorporate curl creams and gels for hold.", "Sleep on a satin pillowcase to reduce friction.", "Use a microfiber towel to dry hair gently.", "Incorporate scalp massages to stimulate growth."],
+        coily: ["Use rich creams and oils; protective styles help retain moisture.", "Avoid brushing dry coils to prevent breakage.", "Detangle with fingers or a wide", "Incorporate leave-in conditioners and butters for hydration.", "Sleep on a satin pillowcase or use a satin bonnet.", "Regular trims to prevent split ends.", "Use a microfiber towel to dry hair gently."]
+    };
+    const tipsList = tips[texture.value].map(item => `<li>${item}</li>`).join('');
+    html += `<p><strong>Texture Tips:</strong> <ul>${tipsList}</ul></p>`;
+
+    // Concern tips
+    const concernTips = {
+        dryness: ["Hydrating masks and avoid sulfates.", "Use oils like argan or coconut for extra moisture.", "Limit heat styling to prevent further dryness.", "Incorporate leave-in conditioners.", "Use a humidifier in dry environments.", "Rinse with cool water to seal moisture.", "Avoid over-washing to retain natural oils."],
+        frizz: ["Use leave-in conditioners and towel gently.", "Incorporate anti-frizz serums or creams.", "Avoid brushing dry hair to reduce frizz.", "Use a microfiber towel to dry hair gently.", "Sleep on a satin pillowcase to minimize friction.", "Regular deep conditioning treatments.", "Limit heat styling to prevent further frizz."],
+        breakage: ["Strengthening treatments and heat protectant are key.", "Avoid excessive heat and chemical treatments.", "Use wide-tooth combs to detangle gently.", "Incorporate protein treatments to strengthen hair.", "Regular trims to remove split ends.", "Avoid tight hairstyles that stress hair.", "Maintain a healthy diet rich in vitamins."],
+        oil: ["Use lightweight products and clarifying shampoos weekly.", "Avoid heavy conditioners that can weigh hair down.", "Rinse with cool water to close the cuticle.", "Limit touching hair to reduce oil transfer.", "Use dry shampoo between washes.", "Incorporate astringent ingredients like tea tree oil.", "Wash hair regularly but avoid over-washing."]
+    };
+    const concernList = concernTips[concern.value].map(item => `<li>${item}</li>`).join('');
+    html += `<p><strong>Concern Help:</strong> <ul>${concernList}</ul></p>`;
+
+    // Heat tips
+    const heatTips = {
+        never: ["Great! Minimal heat use helps hair health.", "Continue using protective styles and air drying.", "Maintain regular conditioning treatments.", "Keep hair hydrated with leave-in products.", "Use a wide-tooth comb to prevent breakage.", "Incorporate scalp massages to stimulate growth.", "Regular trims to maintain hair health."],
+        sometimes: ["Keep heat protectant and moderate temperature usage.", "Limit heat styling to 1–2 times a week.", "Incorporate deep conditioning treatments.", "Use lower heat settings on styling tools.", "Avoid using heat on wet hair.", "Regular trims to prevent split ends.", "Maintain hydration with leave-in conditioners."],
+        often: ["Try no-heat styles 2–3 days a week.", "Always use a heat protectant before styling.", "Incorporate weekly deep conditioning treatments.", "Use lower heat settings on styling tools.", "Avoid using heat on wet hair.", "Regular trims to prevent split ends.", "Maintain hydration with leave-in conditioners."],
+        daily: ["Reduce heat frequency and always use protection.", "Incorporate no-heat styling methods.", "Use the lowest effective heat setting.", "Deep condition weekly to repair damage.", "Avoid using heat on wet hair.", "Regular trims to prevent split ends.", "Maintain hydration with leave-in conditioners."]
+    };
+    const heatList = heatTips[heat.value].map(item => `<li>${item}</li>`).join('');
+    html += `<p><strong>Heat Usage:</strong> <ul>${heatList}</ul></p>`;
+   
+    // Goals tips
+    const goalsTips = {
+        thinning: ["Consider scalp treatments and volumizing products.", "Maintain a healthy diet rich in vitamins.", "Avoid tight hairstyles that stress hair.", "Incorporate scalp massages to stimulate growth.", "Use lightweight products to avoid weighing hair down.", "Regular trims to maintain hair health.", "Limit heat styling to prevent further thinning."],
+        fuller: ["Use thickening shampoos and avoid heavy conditioners.", "Incorporate volumizing mousses and sprays.", "Avoid over-washing to retain natural oils.", "Use a wide-tooth comb to prevent breakage.", "Regular trims to maintain hair health.", "Incorporate scalp massages to stimulate growth."],
+        breakage: ["Incorporate protein treatments and avoid over-manipulation.", "Use wide-tooth combs to detangle gently.", "Avoid tight hairstyles that stress hair.", "Maintain a healthy diet rich in vitamins.", "Regular trims to remove split ends.", "Limit heat styling to prevent further breakage.", "Use leave-in conditioners to maintain moisture."],
+        volume: ["Use root-lifting sprays and avoid heavy styling products.", "Incorporate volumizing mousses and sprays.", "Blow-dry hair upside down for added lift.", "Avoid over-washing to retain natural oils.", "Use a wide-tooth comb to prevent breakage.", "Regular trims to maintain hair health.", "Incorporate scalp massages to stimulate growth."]
+    };
+    const goalsList = goalsTips[goals.value].map(item => `<li>${item}</li>`).join('');
+    html += `<p><strong>Hair Goals:</strong> <ul>${goalsList}</ul></p>`;
+
+    const resultsDiv = document.getElementById("results");
+    resultsDiv.innerHTML = html;
+    resultsDiv.style.display = "block";
+}
+</script>
+
+</body>
+</html>
