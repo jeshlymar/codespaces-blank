@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tips & Products - Azrilahl</title>
+    <link href="styles.css" rel="stylesheet" type ="text/css">     
+
+
+   
+</head>
+
+<body>
+
+ <header>
+        <div class="logo-title">
+            <h1 class="title">Azrilahl</h1>
+            <img src="images/logo.jpg" alt="Azrilahl logo" width="100" height="100" class="logo" />
+        </div>
+        <nav>
+        <a href="home.html">Home</a>
+            <a href="hairCareTest.html">Hair Care Test</a>
+            <a href="tipsProducts.html">Tips & Products</a>
+            <a href="stylingTutorials.html">Styling Tutorials</a>
+            <a href="services.html">Services</a>
+            <a href="aboutContact.html">About & Contact</a>
+        </nav>
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </header>
+
+    <div id="mobileMenu">
+        <a href="home.html">Home</a>
+        <a href="hairCareTest.html">Hair Care Test</a>
+        <a href="tipsProducts.html">Tips & Products</a>
+        <a href="stylingTutorials.html">Styling Tutorials</a>
+        <a href="services.html">Services</a>
+        <a href="aboutContact.html">About & Contact</a>
+    </div>
+
+
+
+<div class="content-wrapper">
+
+    <h2>Tips & Products</h2>
+
+    <div class="selection-box">
+        <h3>Select Hair Type & Product Category</h3>
+
+        <select id="hairTypeSelect" onchange="updateTipsProducts()">
+            <option value="">-- Select Hair Type --</option>
+            <option value="curly">Curly Hair</option>
+            <option value="coily">Coily Hair</option>
+            <option value="wavy">Wavy Hair</option>
+            <option value="straight">Straight Hair</option>
+            <option value="damaged">Damaged Hair</option>
+            <option value="dry">Dry Hair</option>
+        </select>
+
+        <select id="productTypeSelect" onchange="updateTipsProducts()">
+            <option value="">-- Select Product Category --</option>
+            <option value="moisture">Moisture Products</option>
+            <option value="protein">Protein Treatments</option>
+            <option value="styling">Styling Products</option>
+            <option value="oils">Oils & Sealants</option>
+            <option value="shampoo">Shampoos & Conditioners</option>
+            <option value="mask">Hair Masks</option>
+            <option value="heat">Heat Protectants</option>
+            <option value="frizz">Frizz Control Products</option>
+        </select>
+    </div>
+
+    <div class="results-grid">
+
+        <div class="results" id="tipsSection">
+            <h3>Tips</h3>
+            <p>Select a hair type and product category to begin.</p>
+        </div>
+
+        <div class="results" id="productsSection">
+            <h3>Products</h3>
+            <p>Select a hair type and product category to begin.</p>
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<footer>
+    <p>Contact us: azrilahl@gmail.com | (765) 485-9265</p>
+</footer>
+
+
+
+<script>
+function toggleMenu() {
+    document.querySelector("nav").classList.toggle("open");
+}
+
+const tipsData = {
+    curly: ["Curly hair thrives on moisture.", " Avoid sulfates and use leave-in conditioners.", "Use a wide-tooth comb to detangle.", "Pineapple your curls at night to preserve shape.", "Use a diffuser when blow-drying to reduce frizz.", "Regular deep conditioning treatments help maintain curl health.", "Avoid touching your curls too much to prevent frizz.", "Use products with humectants to retain moisture.", "Refresh curls with water and a light leave-in spray between washes.", "Trim regularly to avoid split ends and maintain curl shape.", "Protect your curls from sun damage with hats or UV-protectant sprays.", "Avoid heat styling to maintain curl integrity."],
+    coily: ["Coily hair needs rich creams and protective styles to prevent breakage.", "Use sulfate-free shampoos to avoid stripping natural oils.", "Moisturize frequently with water-based products followed by oils.", "Detangle gently with fingers or a wide-tooth comb when hair is wet.", "Protect hair at night with a satin bonnet or pillowcase.", "Incorporate protein treatments to strengthen hair.", "Avoid excessive manipulation to reduce breakage.", "Use the LOC method (Liquid, Oil, Cream) for optimal moisture retention.", "Regularly stretch hair to minimize shrinkage and tangling.", "Trim ends regularly to prevent split ends and promote healthy growth.", "Protect hair from harsh weather conditions with scarves or hats.", "Limit heat styling to maintain hair health."],
+    wavy: ["Use lightweight creams to enhance waves without weighing them down.", "Avoid brushing dry hair to prevent frizz; use fingers or a wide-tooth comb instead.", "Scrunch hair while drying to encourage wave formation.", "Use a diffuser attachment on your blow dryer to enhance waves.", "Incorporate sea salt sprays for added texture and volume.", "Avoid heavy oils that can weigh down waves.", "Regularly deep condition to maintain moisture balance.", "Use a microfiber towel or cotton T-shirt to dry hair gently.", "Apply styling products to damp hair for better hold.", "Protect hair from sun damage with UV-protectant sprays.", "Trim regularly to avoid split ends and maintain wave shape.", "Limit heat styling to preserve natural wave pattern."],
+    straight: ["Use lightweight serums for shine and avoid heavy oils.", "Regularly clarify hair to remove product buildup.", "Incorporate volumizing products to add body.", "Avoid over-washing to maintain natural oils.", "Use a heat protectant when styling with heat tools.", "Blow-dry hair upside down for added volume.", "Use a wide-tooth comb to detangle wet hair gently.", "Incorporate scalp massages to stimulate hair growth.", "Trim regularly to prevent split ends and maintain healthy hair.", "Protect hair from sun damage with hats or UV-protectant sprays.", "Avoid excessive use of heat styling tools to maintain hair health.", "Use dry shampoo between washes to extend style."],
+    damaged: ["Use protein once per week and reduce heat usage.", "Incorporate deep conditioning treatments regularly.", "Avoid harsh chemical treatments like bleaching or perming.", "Trim split ends to prevent further damage.", "Use a wide-tooth comb to detangle gently.", "Incorporate leave-in conditioners to provide extra moisture.", "Protect hair from sun damage with hats or UV-protectant sprays.", "Avoid over-washing to maintain natural oils.", "Use heat protectants when styling with heat tools.", "Incorporate oils and sealants to lock in moisture.", "Limit the use of heat styling tools to prevent further damage.", "Consider protective styles to minimize manipulation."],
+    dry: ["Deep condition weekly and seal moisture with oils.", "Avoid shampoos with sulfates that can strip natural oils.", "Use leave-in conditioners to provide ongoing moisture.", "Incorporate the LOC method (Liquid, Oil, Cream) for optimal hydration.", "Avoid excessive heat styling to prevent further dryness.", "Use a humidifier in dry environments to maintain hair moisture.", "Protect hair at night with a satin bonnet or pillowcase.", "Trim regularly to remove dry, split ends.", "Incorporate hydrating masks into your routine.", "Use gentle, moisturizing shampoos and conditioners.", "Avoid washing hair too frequently to retain natural oils.", "Incorporate oils like argan or jojoba to lock in moisture."]
+};
+
+
+
+const productData = {
+    moisture: ["Mielle Pomegranate Leave-In", "Shea Moisture Curl Smoothie", "Cantu Shea Butter Moisturizing Cream", "Aunt Jackie's Quench Moisture Intensive Leave-In Conditioner", "Camille Rose Naturals Curl Love Moisture Milk", "Kinky-Curly Knot Today Leave-In Conditioner", "Alikay Naturals Moisture Rich Parfait", "TGIN Green Tea Super Moist Leave-In Conditioner", "As I Am DoubleButter Cream", "DevaCurl One Condition Original", "Briogeo Don't Despair, Repair! Deep Conditioning Mask", "Ouidad Curl Quencher Moisturizing Conditioner", "Eden BodyWorks Coconut Shea Leave-In Conditioner", "Curls Blueberry Bliss Reparative Leave-In Conditioner", "Jane Carter Solution Revitalizing Leave-In Conditioner", "Alikay Naturals Lemongrass Leave-In Conditioner", "KeraCare Moisture Renewal Leave-In Conditioner", "Design Essentials Almond & Avocado Leave-In Conditioner", "Taliah Waajid Protective Styles Leave-In Conditioner", "Maui Moisture Heal & Hydrate + Shea Butter Leave-In Conditioner"],
+    protein: ["Aphogee Two-Step", "Olaplex No.3", "Shea Moisture Jamaican Black Castor Oil Strengthen & Restore Treatment", "Mielle Babassu Oil & Mint Deep Conditioner", "Briogeo Don't Despair, Repair! Protein Power Treatment", "Camille Rose Algae Renew Deep Conditioner", "Cantu Protein Treatment", "Aunt Jackie's Fix My Hair Intensive Repair Conditioning Masque", "TGIN Honey Miracle Hair Mask", "Eden BodyWorks Jojoba Monoi Deep Conditioner", "Jane Carter Solution Revitalizing Protein Treatment", "Alikay Naturals Avocado & Honey Deep Conditioner", "KeraCare Keratin Deep Smoothing Repair Masque", "Design Essentials Almond & Avocado Protein Reconstructor", "Taliah Waajid Strengthen & Grow Protein Treatment", "Maui Moisture Strength & Restore + Bamboo Fibers Protein Treatment", "Giovanni 2chic Repairing Moisture Mask", "Redken Extreme Strength Builder Plus Fortifying Mask", "Joico K-PAK"],
+    styling: ["Eco Styler Gel", "Curl Enhancing Custard", "Shea Moisture Curl Enhancing Smoothie", "Cantu Coconut Curling Cream", "Aunt Jackie's Curl La La Defining Curl Custard", "Mielle Organics Pomegranate & Honey Curl Smoothie", "Camille Rose Naturals Curl Maker", "Kinky-Curly Original Curling Custard", "Alikay Naturals Twist Defining Cream", "TGIN Twist & Define Cream", "As I Am Smoothing Gel", "DevaCurl Ultra Defining Gel", "Briogeo Curl Charisma Rice Amino + Avocado Leave-In Defining Cream", "Eden BodyWorks Coconut Shea Styling Souffle", "Curls Blueberry Bliss Curl Control Jelly", "Jane Carter Solution Curls to Go!", "Alikay Naturals Honey & Sage Styling Gel", "KeraCare Hold & Shine Styling Gel", "Design Essentials Natural Almond & Avocado Curl Enhancing Mousse", "Taliah Waajid Curly Curl Defining Creme"],
+    oils: ["Jojoba Oil", "Argan Oil", "Coconut Oil", "Castor Oil", "Olive Oil", "Grapeseed Oil", "Sweet Almond Oil", "Avocado Oil", "Tea Tree Oil", "Rosemary Oil", "Mielle Organics Rosemary Mint Scalp & Hair Strengthening Oil", "Shea Moisture 100% Pure Argan Oil", "Camille Rose Naturals Moroccan Pear Conditioning Hair Butter", "Alikay Naturals Essential 17 Hair Growth Oil", "TGIN Argan Replenishing Hair & Body Oil", "As I Am Smoothing Sealant", "DevaCurl B'Leave-In Miracle Curl Plumper", "Briogeo Rosarco Oil", "Eden BodyWorks Jojoba Monoi Hair & Body Oil", "Curls Blueberry Bliss Hair Growth Oil"],
+    shampoo: ["As I Am Cowash", "Shea Moisture Hydration Shampoo", "Mielle Organics Babassu Oil Conditioning Shampoo", "Cantu Sulfate-Free Cleansing Cream Shampoo", "Aunt Jackie's Oh So Clean! Moisturizing & Softening Shampoo", "Camille Rose Naturals Sweet Ginger Cleansing Rinse", "Kinky-Curly Come Clean Natural Moisturizing Shampoo", "Alikay Naturals Moisturizing Black Soap Shampoo", "TGIN Moisture Rich Sulfate-Free Shampoo", "Eden BodyWorks Coconut Shea Cleansing Co-Wash", "Jane Carter Solution Revitalizing Sulfate-Free Shampoo", "Alikay Naturals Lavender & Peppermint Shampoo", "KeraCare Moisture Renewal Cleansing Sulfate-Free Shampoo", "Design Essentials Almond & Avocado Hydrating Sulfate-Free Shampoo", "Taliah Waajid Nourishing Sulfate-Free Shampoo", "Maui Moisture Heal & Hydrate + Shea Butter Shampoo", "Giovanni Smooth As Silk Deep Moisture Shampoo", "Redken Color Extend Magnetics Shampoo", "Joico Color Balance Purple Shampoo"],
+    mask: ["Amika Soulfood Nourishing Mask", "Briogeo Don't Despair, Repair! Deep Conditioning Mask", "Olaplex No.8 Bond Intense Moisture Mask", "Shea Moisture Manuka Honey & Mafura Oil Intensive Hydration Hair Masque", "Cantu Shea Butter Deep Treatment Masque", "Aunt Jackie's Coco Repair Deep Conditioning Masque", "TGIN Honey Miracle Hair Mask", "KeraCare Keratin Deep Smoothing Repair Masque", "Design Essentials Almond & Avocado Protein Reconstructor", "Taliah Waajid Strengthen & Grow Protein Treatment", "Maui Moisture Strength & Restore + Bamboo Fibers Protein Treatment", "Giovanni 2chic Repairing Moisture Mask", "Redken Extreme Strength Builder Plus Fortifying Mask", "Joico K-PAK Intensive Hydrator", "Mielle Organics Babassu Oil & Mint Deep Conditioner", "Camille Rose Algae Renew Deep Conditioner", "Alikay Naturals Avocado & Honey Deep Conditioner", "Eden BodyWorks Jojoba Monoi Deep Conditioner", "Jane Carter Solution Revitalizing Protein Treatment", "As I Am Hydration Elation Intensive Conditioner", "DevaCurl Heaven In Hair Intense Moisture Treatment"],
+    heat: ["Bondiboost Heat Protectant Spray", "CHI 44 Iron Guard Thermal Protection Spray", "Tresemmé Thermal Creations Heat Tamer Spray", "HSI Professional Argan Oil Heat Protector", "Cantu Thermal Shield Heat Protectant", "Mielle Organics Mongongo Oil Thermal & Heat Protectant Spray", "Shea Moisture Jamaican Black Castor Oil Strengthen & Restore Heat Protectant", "Aunt Jackie's Heat Protection Spray", "Camille Rose Naturals Almond Jai Twisting Butter & Heat Protectant", "Alikay Naturals Lemongrass Leave-In Conditioner & Heat Protectant", "TGIN Argan Replenishing Hair & Body Oil", "As I Am Smoothing Sealant & Heat Protectant", "DevaCurl B'Leave-In Miracle Curl Plumper & Heat Protectant", "Briogeo Farewell Frizz Rosarco Milk Leave-In Conditioning Spray & Heat Protectant", "Eden BodyWorks Jojoba Monoi Hair & Body Oil & Heat Protectant", "Curls Blueberry Bliss Hair Growth Oil & Heat Protectant", "Jane Carter Solution Curls to Go! & Heat Protectant", "KeraCare Hold & Shine Styling Gel & Heat Protectant", "Design Essentials Natural Almond & Avocado Curl Enhancing Mousse & Heat Protectant", "Taliah Waajid Curly Curl Defining Creme & Heat Protectant"],
+    frizz: ["COLOR WOW Anti-Frizz Dream Coat", "Living Proof No Frizz Nourishing Styling Cream", "John Frieda Frizz Ease Secret Weapon Touch-Up Crème", "Garnier Fructis Sleek & Shine Anti-Frizz Serum", "Moroccanoil Treatment", "Bumble and Bumble Hairdresser's Invisible Oil", "Redken Frizz Dismiss Rebel Tame Leave-In Cream", "Aussie 3 Minute Miracle Smooth Deep Conditioner", "OGX Nourishing + Coconut Milk Anti-Breakage Serum", "L'Oréal Paris Elvive Extraordinary Oil Treatment", "Mielle Organics Pomegranate & Honey Anti-Frizz Serum", "Shea Moisture Coconut & Hibiscus Frizz-Free Curl Mousse", "Cantu Shea Butter Anti-Frizz Smoothing Oil", "Aunt Jackie's Frizz Patrol Smoothing & Defrizzing Creme", "Camille Rose Naturals Almond Jai Defrizzer", "Alikay Naturals Lemongrass Leave-In Conditioner & Anti-Frizz", "TGIN Argan Replenishing Hair & Body Oil & Anti-Frizz", "As I Am Smoothing Sealant & Anti-Frizz", "DevaCurl B'Leave-In Miracle Curl Plumper & Anti-Frizz", "Briogeo Farewell Frizz Rosarco Milk Leave-In Conditioning Spray & Anti-Frizz"]
+}; 
+    
+
+
+function updateTipsProducts() {
+    const hairType = document.getElementById("hairTypeSelect").value;
+    const productType = document.getElementById("productTypeSelect").value;
+
+    const tipsSection = document.getElementById("tipsSection");
+    const productsSection = document.getElementById("productsSection");
+
+   if (hairType) {
+    const tipsList = tipsData[hairType]
+        .map(tip => `<li>${tip}</li>`)
+        .join("");
+
+    tipsSection.innerHTML = `
+        <h3>${hairType.charAt(0).toUpperCase() + hairType.slice(1)} Hair Tips</h3>
+        <ul>${tipsList}</ul>
+    `;
+}
+
+
+    if (productType) {
+        const items = productData[productType]
+            .map(item => `<li>${item}</li>`)
+            .join("");
+
+        productsSection.innerHTML = `
+            <h3>${productType.charAt(0).toUpperCase() + productType.slice(1)} Products</h3>
+            <ul>${items}</ul>
+        `;
+    }
+
+    if (!hairType) {
+        tipsSection.innerHTML = `<h3>Tips</h3><p>Select a hair type above.</p>`;
+    }
+    if (!productType) {
+        productsSection.innerHTML = `<h3>Products</h3><p>Select a product category above.</p>`;
+    }
+}
+</script>
+
+</body>
+</html>
