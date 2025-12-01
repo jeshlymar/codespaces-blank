@@ -52,7 +52,7 @@ nav a {
     color: #4A3F35;
     font-weight: bold;
 }
-        /* Hamburger */
+        
 .hamburger {
     display: none;
     flex-direction: column;
@@ -67,7 +67,7 @@ nav a {
     background-color: #4A3F35;
     margin: 4px 0;
 }
-        /* Mobile menu */
+    
 #mobileMenu {
     display: none;
     flex-direction: column;
@@ -80,7 +80,7 @@ nav a {
     border-bottom: 1px solid #E6C0B8;
     color: #4A3F35;
 }
-        /* Mission */
+        
 .mission {
     padding: 30px;
     text-align: center;
@@ -88,12 +88,12 @@ nav a {
     border-top: 2px solid #E6C0B8;
     border-bottom: 2px solid #E6C0B8;
 }
-        /* Featured */
+        
 .featured {
     padding: 30px;
     text-align: center;
 }
-        /* Carousel */
+        
 .carousel {
     width: 100%;
     max-width: 700px;
@@ -104,7 +104,7 @@ nav a {
     border-radius: 8px;
     border: 3px solid #E6C0B8;
 }
-        /* Footer */
+        
 footer {
     background-color: #4A3F35;
     color: white;
@@ -146,9 +146,9 @@ footer {
     margin-bottom: 20px;
 }
 .question-block label {
-    display: block;       /* each option on its own line */
-    position: relative;   /* for radio alignment */
-    padding-left: 30px;   /* space for radio button */
+    display: block;       
+    position: relative;   
+    padding-left: 30px;  
     margin-bottom: 10px;
     cursor: pointer;
 }
@@ -167,9 +167,6 @@ footer {
     margin-top: 0;
 }
 
-/*input[type="radio"] {
-    margin-right: 10px;
-}*/
 
 .submit-btn {
     display: block;
@@ -210,7 +207,6 @@ footer {
             margin-bottom: 15px;
         }
 
-        /* SELECTION BOX --------------------------------------------*/
         .selection-box {
             text-align: center;
             margin-bottom: 30px;
@@ -229,7 +225,6 @@ footer {
             font-family: "Bookman Old Style", serif;
         }
 
-        /* GRID LAYOUT ---------------------------------------------*/
         .results-grid {
             display: flex;
             gap: 30px;
@@ -255,6 +250,24 @@ footer {
         }
 
 /*Styling Tutorial Styles*/
+
+.youtube-wrapper {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; 
+    height: 0;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.youtube-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
  .tutorial {
             display: flex;
             flex-wrap: wrap;
@@ -289,7 +302,6 @@ footer {
             flex: 1 1 50%;
         }
 
-        /* DROPDOWNS */
         .dropdown {
             margin-bottom: 20px;
         }
@@ -322,7 +334,6 @@ footer {
         }
 
 /*Services Styles*/
-  /* Service Section */
         .services-container {
             max-width: 900px;
             margin: 30px auto;
@@ -351,7 +362,6 @@ footer {
             margin-top: 5px;
         }
 
-        /* Salon + Specialist Section */
         .featured-section {
             display: flex;
             justify-content: space-between;
@@ -371,7 +381,6 @@ footer {
 
 
 /* About Styles */
-  /* About Section */
         .about-container {
             max-width: 900px;
             margin: 30px auto;
@@ -381,7 +390,6 @@ footer {
             border-radius: 8px;
         }
 
-        /* Contact Form Section */
         .form-container {
             max-width: 900px;
             margin: 30px auto;
@@ -432,7 +440,6 @@ footer {
             background-color: #D3A8A0;
         }
 
-        /* Professionals Section */
         .professionals-container {
             max-width: 900px;
             margin: 30px auto;
