@@ -1,0 +1,447 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ body {
+    margin: 0;
+    font-family: 'Bookman Old Style', serif;
+    background-color: #F7EFEA; /* pale rose cream */
+    color: #4A3F35;
+}
+header {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    position: relative;
+    padding: 15px;
+    background-color: #F3D9D0; /* soft pale rose */
+    border-bottom: 2px solid #E6C0B8;
+}
+.logo-title {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+    position: relative;
+}
+
+.title {
+    font-family: "Bookman Old Style", serif;
+    color: #4A3F35;
+    font-size: 32px;
+    margin: 0;
+    text-align: center;
+}
+.logo {
+    position: absolute;
+    left: 20px;
+    border-radius: 50%;
+    border: 3px solid #E6C0B8;
+    height: 80px;
+}
+nav {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 10px;
+}
+nav a {
+    text-decoration: none;
+    color: #4A3F35;
+    font-weight: bold;
+}
+        /* Hamburger */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+.hamburger div {
+    width: 25px;
+    height: 3px;
+    background-color: #4A3F35;
+    margin: 4px 0;
+}
+        /* Mobile menu */
+#mobileMenu {
+    display: none;
+    flex-direction: column;
+    background-color: #F3D9D0;
+    padding: 10px;
+    border-bottom: 2px solid #E6C0B8;
+}
+#mobileMenu a {
+    padding: 10px 0;
+    border-bottom: 1px solid #E6C0B8;
+    color: #4A3F35;
+}
+        /* Mission */
+.mission {
+    padding: 30px;
+    text-align: center;
+    background-color: #FAF4F1;
+    border-top: 2px solid #E6C0B8;
+    border-bottom: 2px solid #E6C0B8;
+}
+        /* Featured */
+.featured {
+    padding: 30px;
+    text-align: center;
+}
+        /* Carousel */
+.carousel {
+    width: 100%;
+    max-width: 700px;
+    margin: 20px auto;
+}
+.carousel img {
+    width: 100%;
+    border-radius: 8px;
+    border: 3px solid #E6C0B8;
+}
+        /* Footer */
+footer {
+    background-color: #4A3F35;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+ @media (max-width: 768px) {
+            nav {
+                display: none;
+                flex-direction: column;
+                background-color: #F3D9D0;
+                padding: 10px;
+                border-top: 2px solid #E6C0B8;
+            }
+
+            nav.open {
+                display: flex;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+        }
+
+
+/* Hair Care Test Styles */
+.container {
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+.question-block {
+    background-color: #FFF4F2;
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid #E6C0B8;
+    margin-bottom: 20px;
+}
+.question-block label {
+    display: block;       /* each option on its own line */
+    position: relative;   /* for radio alignment */
+    padding-left: 30px;   /* space for radio button */
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.question-block input[type="radio"] {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+
+
+
+.question-block h3 {
+    margin-top: 0;
+}
+
+/*input[type="radio"] {
+    margin-right: 10px;
+}*/
+
+.submit-btn {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background: #D8B4B6;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    background: #c69ea0;
+}
+
+#results {
+    display: none;
+    background-color: #FFF4F2;
+    border: 2px solid #E6C0B8;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+
+/* Tips & Products Styles */
+ .content-wrapper {
+            padding: 30px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        /* SELECTION BOX --------------------------------------------*/
+        .selection-box {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: #FAF4F1;
+            border: 2px solid #E6C0B8;
+            border-radius: 10px;
+        }
+
+        .selection-box select {
+            padding: 10px;
+            margin: 10px;
+            border: 2px solid #E6C0B8;
+            border-radius: 6px;
+            background-color: #FFF4F2;
+            font-family: "Bookman Old Style", serif;
+        }
+
+        /* GRID LAYOUT ---------------------------------------------*/
+        .results-grid {
+            display: flex;
+            gap: 30px;
+        }
+
+        .results {
+            flex: 1;
+            background-color: #FFF4F2;
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid #E6C0B8;
+        }
+
+        .results h3 {
+            margin-top: 0;
+        }
+
+        .result-img {
+            width: 100%;
+            margin-top: 10px;
+            border-radius: 10px;
+            border: 2px solid #E6C0B8;
+        }
+
+/*Styling Tutorial Styles*/
+ .tutorial {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
+            max-width: 1100px;
+            margin: 30px auto;
+            padding: 20px;
+            background: #FAF4F1;
+            border: 2px solid #E6C0B8;
+            border-radius: 10px;
+        }
+
+        .tutorial-video {
+            flex: 1 1 40%;
+            text-align: center;
+        }
+
+        .tutorial-video video {
+            width: 100%;
+            border-radius: 10px;
+            border: 3px solid #E6C0B8;
+        }
+
+        .final-image {
+            width: 100%;
+            margin-top: 15px;
+            border-radius: 10px;
+            border: 3px solid #E6C0B8;
+        }
+
+        .tutorial-text {
+            flex: 1 1 50%;
+        }
+
+        /* DROPDOWNS */
+        .dropdown {
+            margin-bottom: 20px;
+        }
+
+        .dropdown-btn {
+            width: 100%;
+            padding: 12px;
+            font-size: 18px;
+            background-color: #E6C0B8;
+            border: none;
+            cursor: pointer;
+            border-radius: 6px;
+            text-align: left;
+            font-family: "Bookman Old Style", serif;
+            font-weight: bold;
+            color: #4A3F35;
+        }
+
+        .dropdown-btn:hover {
+            background-color: #D3A8A0;
+        }
+
+        .dropdown-content {
+            display: none;
+            padding: 15px;
+            background: #F7EFEA;
+            border-left: 3px solid #E6C0B8;
+            border-radius: 4px;
+            margin-top: 5px;
+        }
+
+/*Services Styles*/
+  /* Service Section */
+        .services-container {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 20px;
+        }
+        details {
+            background: #FAF4F1;
+            border: 2px solid #E6C0B8;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+        summary {
+            font-size: 20px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .sub-summary {
+            margin-left: 20px;
+            margin-top: 10px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .sub-content {
+            margin-left: 40px;
+            margin-top: 5px;
+        }
+
+        /* Salon + Specialist Section */
+        .featured-section {
+            display: flex;
+            justify-content: space-between;
+            padding: 30px;
+            gap: 20px;
+        }
+        .featured-box {
+            width: 48%;
+            background: #FAF4F1;
+            border: 2px solid #E6C0B8;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .featured-box h3 {
+            margin-top: 0;
+        }
+
+
+/* About Styles */
+  /* About Section */
+        .about-container {
+            max-width: 900px;
+            margin: 30px auto;
+            background: #FAF4F1;
+            padding: 25px;
+            border: 2px solid #E6C0B8;
+            border-radius: 8px;
+        }
+
+        /* Contact Form Section */
+        .form-container {
+            max-width: 900px;
+            margin: 30px auto;
+            background: #FAF4F1;
+            padding: 25px;
+            border: 2px solid #E6C0B8;
+            border-radius: 8px;
+        }
+.confirmation-message {
+    display: none;
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #D8F3DC;
+    border: 2px solid #95D5B2;
+    border-radius: 8px;
+    color: #1B4332;
+    font-size: 18px;
+    text-align: center;
+}
+
+        form label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        form input, form textarea {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #E6C0B8;
+            border-radius: 5px;
+            font-family: 'Bookman Old Style', serif;
+            margin-bottom: 20px;
+        }
+
+        form button {
+            background-color: #E6C0B8;
+            border: none;
+            padding: 12px 20px;
+            cursor: pointer;
+            color: #4A3F35;
+            font-weight: bold;
+            border-radius: 6px;
+            font-family: 'Bookman Old Style', serif;
+        }
+
+        form button:hover {
+            background-color: #D3A8A0;
+        }
+
+        /* Professionals Section */
+        .professionals-container {
+            max-width: 900px;
+            margin: 30px auto;
+            background: #FAF4F1;
+            padding: 25px;
+            border: 2px solid #E6C0B8;
+            border-radius: 8px;
+        }
+
+        .professional-entry {
+            margin-bottom: 20px;
+        }
